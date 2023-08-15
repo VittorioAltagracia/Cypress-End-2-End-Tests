@@ -2,7 +2,7 @@ import { AccessAndTestStorage } from "../utils/helperfile";
 import { baseUrl } from "../utils/baseUrl";
 
 describe("e2e tests for Speak Italian in Austin website", () => {
-  it.skip("navigates to the website and asserts that language is changed when users click", () => {
+  it("navigates to the website and asserts that language is changed when users click", () => {
     cy.visit(baseUrl);
 
     cy.get(".title")
@@ -22,7 +22,7 @@ describe("e2e tests for Speak Italian in Austin website", () => {
     AccessAndTestStorage("en");
     cy.get(".fa-language").should("have.text", " Languages").click();
   });
-  it.skip("navigates to all pages and confirms that urls are updated correctly", () => {
+  it("navigates to all pages and confirms that urls are updated correctly", () => {
     cy.visit(baseUrl);
     cy.get(".nav2").should("have.text", " What we do").click();
     cy.url().should("be.equal", baseUrl + `/photos.html`);
